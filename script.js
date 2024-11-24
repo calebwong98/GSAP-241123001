@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
           if (nextProject) {
             const nextRect = nextProject.getBoundingClientRect();
 
-            if (projectRect.top <= pushPoint && activeIndex !== i + 1) {
+            if (nextRect.top <= pushPoint && activeIndex !== i + 1) {
               gsap.killTweensOf([mask, digitWrapper, firstDigit, secondDigit]);
 
               activeIndex = i + 1;
@@ -198,8 +198,8 @@ document.addEventListener("DOMContentLoaded", () => {
             if (prevProject) {
               const prevMask = prevProject.querySelector(".mask");
               const prevWrapper = prevProject.querySelector(".digit-wrapper");
-              const prevFirst = project.querySelector(".first");
-              const prevSecond = project.querySelector(".second");
+              const prevFirst = prevProject.querySelector(".first");
+              const prevSecond = prevProject.querySelector(".second");
 
               gsap.killTweensOf([prevMask, prevWrapper, prevFirst, prevSecond]);
 
